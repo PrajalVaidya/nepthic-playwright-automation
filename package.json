@@ -1,0 +1,43 @@
+{
+  "name": "nepthic-playwright-automation",
+  "version": "1.0.0",
+  "description": "Playwright test automation framework with industry-standard structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:headed": "playwright test --headed",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project=Mobile Chrome",
+    "test:single": "playwright test --grep @smoke",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "lint": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write src"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "e2e"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^20.15.0",
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "@typescript-eslint/parser": "^8.46.4",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "faker": "^6.6.6",
+    "faker-js": "^1.0.0"
+  }
+}
