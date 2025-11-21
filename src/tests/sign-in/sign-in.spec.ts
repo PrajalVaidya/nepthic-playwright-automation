@@ -171,6 +171,10 @@ test.describe('Sign In Page - Theme Toggle', () => {
 });
 
 test.describe('Sign In Page - Responsive Design', () => {
+  test.beforeEach(async ({ signInPage }) => {
+    await signInPage.navigateToSignIn();
+  });
+
   test('@regression should verify page loads on mobile viewport', async ({ signInPage }) => {
     // Verify mobile menu button exists
     const mobileMenuButton = signInPage.mobileMenuButton;
@@ -179,7 +183,7 @@ test.describe('Sign In Page - Responsive Design', () => {
 
   test('@regression should verify form is responsive', async ({ signInPage }) => {
     // Verify form container is visible
-    const heading = signInPage.signInHeading;
+    const heading = signInPage.signInSubmitButton;
     expect(await heading.isVisible()).toBeTruthy();
   });
 });

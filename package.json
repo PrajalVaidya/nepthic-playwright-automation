@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Playwright test automation framework with industry-standard structure",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "playwright test",
     "test:ui": "playwright test --ui",
@@ -33,10 +34,14 @@
     "@typescript-eslint/parser": "^8.46.4",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
+    "dotenv": "^17.2.3",
     "faker": "^6.6.6",
     "faker-js": "^1.0.0",
     "prettier-eslint": "^16.4.2"

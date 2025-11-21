@@ -1,8 +1,7 @@
 import { test, expect } from '@fixtures/test-fixtures';
-import { testSignUpVerificationCodeUser, validCredentials } from '@data/auth-data/sign-in.data';
+import { validCredentials } from '@data/auth-data/sign-up.data';
 import { BASE_URL } from '@fixtures/url';
 import { getVerificationCode } from '@utils/get-verification-code.helper';
-import { setUncaughtExceptionCaptureCallback } from 'process';
 
 test.describe('Sign Up Page - UI Verification', () => {
   test.beforeEach(async ({ signUpPage }) => {

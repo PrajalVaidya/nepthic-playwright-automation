@@ -5,8 +5,8 @@ import { BASE_URL } from './src/fixtures/url';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
-
+import dotenv from 'dotenv';
+dotenv.config();
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -36,9 +36,9 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'off',
     actionTimeout: 10000,
-    navigationTimeout: 10000
+    navigationTimeout: 10000,
   },
 
   /* Configure projects for major browsers */

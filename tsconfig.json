@@ -26,12 +26,21 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@fixtures/*": ["src/fixtures/*"],
-      "@utils/*": ["src/utils/*"],
       "@data/*": ["src/data/*"],
+      "@utils/*": ["src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@fixtures/*": ["src/fixtures/*"],
+      "@pages/*": ["src/pages/*"],
+      "@config/*": ["src/config/*"],
       "@tests/*": ["src/tests/*"]
     }
   },
-  "include": ["./src", "**/.config.ts"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ESNext"
+    },
+    "transpileOnly": true,
+    "require": ["tsconfig-paths/register"],
+    "include": ["./src", "**/.config.ts"]
+  }
 }

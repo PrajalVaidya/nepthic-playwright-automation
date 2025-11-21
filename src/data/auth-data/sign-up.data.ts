@@ -1,8 +1,22 @@
+import { faker } from '@faker-js/faker';
+
+/**
+ * Sign Up and Sign In Test Data
+ */
+const fullName = faker.person.fullName();
+const email =
+  fullName
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9]/g, '') +
+  faker.number.int(10000) +
+  '@yopmail.com';
+
 export const validCredentials = {
-  fullName: 'John Doe',
-  username: 'johndoe',
-  email: 'john.doe@example.com',
-  phone: '+1 (555) 123-4567',
+  fullName: fullName,
+  username: faker.internet.username().replace(/[^a-zA-Z0-9]/g, ''),
+  email: email,
+  phone: faker.phone.number({ style: 'international' }),
   password: 'SecurePassword123!',
   confirmPassword: 'SecurePassword123!',
 };
