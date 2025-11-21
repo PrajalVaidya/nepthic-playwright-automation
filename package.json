@@ -18,7 +18,8 @@
     "report": "playwright show-report",
     "codegen": "playwright codegen",
     "lint": "eslint src --ext .ts,.tsx --fix",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "test:sign-up headed": "xvfb-run npx playwright test sign-up.spec.ts"
   },
   "keywords": [
     "playwright",
