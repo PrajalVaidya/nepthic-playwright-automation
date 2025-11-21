@@ -10,6 +10,8 @@ const email =
     .replace(/[^a-zA-Z0-9]/g, '') +
   faker.number.int(10000) +
   '@yopmail.com';
+
+
 export const validCredentials = {
   fullName: fullName,
   username: faker.internet.username().replace(/[^a-zA-Z0-9]/g, ''),

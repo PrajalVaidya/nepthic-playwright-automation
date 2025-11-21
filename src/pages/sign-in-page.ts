@@ -63,7 +63,7 @@ export class SignInPage extends BasePage {
 		this.signInHeading = page.getByRole('heading', { name: /Sign In|Login/i }).first();
 		this.signInSubHeading = page.getByText(/Welcome back|Enter your credentials/i).first();
 		this.googleSignInButton = page.getByRole('button', { name: /Sign in with Google/i });
-		this.emailInput = page.locator('input[type="email"]').first();
+		this.emailInput = page.locator('input[placeholder="Enter your email or username"]').first();
 		this.passwordInput = page.locator('input[type="password"]').first();
 		this.rememberMeCheckbox = page.locator('input[type="checkbox"]');
 		this.rememberMeLabel = page.getByText('Remember me');

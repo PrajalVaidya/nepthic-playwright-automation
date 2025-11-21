@@ -85,7 +85,7 @@ export class SignUpPage extends BasePage {
 
     // Verification form Elements
     this.verificationCodeInput = page.getByRole('textbox');
-    this.verificationCodeSubmitButton = page.getByRole('button', { name: 'Verify' })
+    this.verificationCodeSubmitButton = page.getByRole('button', { name: 'Verify' });
 
     // Footer Elements
     this.footer = page.locator('footer');
@@ -169,8 +169,8 @@ export class SignUpPage extends BasePage {
     await this.fillPhoneNumber(formData.phone);
     await this.fillPassword(formData.password);
     await this.fillConfirmPassword(formData.confirmPassword);
+    console.log('Sign up form filled with data: ', formData);
   }
-
 
   /**
    * Fill in the OTP for sign up
