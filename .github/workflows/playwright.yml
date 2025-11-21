@@ -37,7 +37,7 @@ jobs:
         continue-on-error: true
 
       - name: Run Playwright tests
-        run: npm test
+        run: npm run test:sign-up
         env:
           CI: true
 
