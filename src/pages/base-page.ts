@@ -13,7 +13,7 @@ export class BasePage {
   /**
    * Navigate to a path
    */
-  async goto(path: string = '/') {
+  async goto(path: string) {
     await this.page.goto(path);
   }
 

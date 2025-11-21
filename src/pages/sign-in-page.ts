@@ -1,5 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './base-page';
+import { SIGNIN_PAGE } from '@fixtures/url';
 
 /**
  * Sign In Page Object Model
@@ -89,7 +90,7 @@ export class SignInPage extends BasePage {
    * Navigate to sign in page
    */
   async navigateToSignIn(): Promise<void> {
-    await this.goto('/sign-in');
+    await this.goto(SIGNIN_PAGE);
   }
 
   /**
