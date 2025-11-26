@@ -55,7 +55,6 @@ test.describe('Sign Up Page - Form Interaction', () => {
 
   test('@regression should fill all form fields correctly', async ({ signUpPage }) => {
     await signUpPage.fillSignUpForm(validCredentials);
-
     expect(await signUpPage.getFullNameValue()).toBe(validCredentials.fullName);
     expect(await signUpPage.getUsernameValue()).toBe(validCredentials.username);
     expect(await signUpPage.getEmailValue()).toBe(validCredentials.email);
@@ -148,6 +147,10 @@ test.describe('Sign Up Page - Theme Toggle', () => {
 });
 
 test.describe('Sign Up Page - Responsive Design', () => {
+  test.beforeEach(async ({ signUpPage }) => {
+    await signUpPage.navigateToSignUp();
+  });
+
   test('@regression should verify page loads on mobile viewport', async ({ signUpPage }) => {
     // Verify mobile menu button exists
     const mobileMenuButton = signUpPage.mobileMenuButton;
@@ -177,7 +180,7 @@ test.describe('Sign Up Page - Functionality tests', () => {
     await signUpPage.submitSignUp();
 
     // Get verification code
-    let verificationCode = await getVerificationCode(page, validCredentials.email, page.context());
+    const verificationCode = await getVerificationCode(page, validCredentials.email, page.context());
     await signUpPage.fillVerificationCode(verificationCode);
     await signUpPage.submitVerificationCode();
 

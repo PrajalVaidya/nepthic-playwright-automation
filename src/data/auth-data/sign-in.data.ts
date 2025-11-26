@@ -13,7 +13,7 @@ export const testAlreadyRegisteredUser = {
   username: 'test',
   email: 'testuser@yopmail.com',
   phone: faker.phone.number({ style: 'international' }),
-  password: 'test@123',
+  password: 'test-123',
   confirmPassword: 'test@123',
 };
 

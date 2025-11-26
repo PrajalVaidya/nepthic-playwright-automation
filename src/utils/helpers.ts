@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { expect, Page } from '@playwright/test';
 
 /**
  * Wait for network idle
@@ -62,4 +62,8 @@ export async function waitAndClick(page: Page, selector: string, timeout = 5000)
 export async function takeScreenshot(page: Page, name: string) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
   await page.screenshot({ path: `./reports/${name}-${timestamp}.png` });
+}
+
+export async function closeToastPopUp(page:Page){
+  await page.getByRole('button', { name: 'Close toast' }).click();
 }

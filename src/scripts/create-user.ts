@@ -9,13 +9,13 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-async function createUser(formData: Object, page: Page) {
+async function createUser(formData: object, page: Page) {
   const signUpPage = new SignUpPage(page);
   const signInPage = new SignInPage(page);
   await signUpPage.navigateToSignUp();
   await signUpPage.fillSignUpForm(testAlreadyRegisteredUser);
   await signUpPage.submitSignUp();
-  let verificationCode = await getVerificationCode(
+  const verificationCode = await getVerificationCode(
     page,
     testAlreadyRegisteredUser.email,
     page.context()

@@ -14,7 +14,7 @@ test('@smoke should verify successful user registration', async ({
   await signUpPage.submitSignUp();
 
   // Get verification code
-  let verificationCode = await getVerificationCode(page, validCredentials.email, page.context());
+  const verificationCode = await getVerificationCode(page, validCredentials.email, page.context());
   await signUpPage.fillVerificationCode(verificationCode);
   await signUpPage.submitVerificationCode();
 
