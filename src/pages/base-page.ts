@@ -69,7 +69,7 @@ export class BasePage {
   /**
    * Execute JavaScript on page
    */
-  async executeScript<T>(script: string | Function, args?: unknown[]): Promise<T> {
+  async executeScript<T>(script: string | ((arg: any) => any), args?: any): Promise<T> {
     return this.page.evaluate(script, args) as Promise<T>;
   }
 }

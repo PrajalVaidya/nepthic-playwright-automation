@@ -2,9 +2,7 @@
  * Application URLs Configuration
  */
 
-import { DEV_ENVIRONMENT, LOCAL_ENVIRONMENT } from '../../config/environment.config';
-
-export const BASE_URL = DEV_ENVIRONMENT;
+export const BASE_URL = 'https://dev.nepthic.com';
 export const SIGNUP_PAGE = '/sign-up';
 export const SIGNIN_PAGE = '/sign-in';
 export const HOMEPAGE = '/';

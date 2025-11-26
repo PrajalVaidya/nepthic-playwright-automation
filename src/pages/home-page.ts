@@ -60,6 +60,9 @@ export class HomePage extends BasePage {
   readonly tiktokLink: Locator;
   readonly footerCopyright: Locator;
 
+  // Toast message section
+  readonly loginSuccessToast:Locator;
+
   constructor(page: Page) {
     super(page);
 
@@ -128,6 +131,9 @@ export class HomePage extends BasePage {
     this.twitterLink = this.footer.getByRole('link', { name: 'Twitter' });
     this.tiktokLink = this.footer.getByRole('link', { name: 'TikTok' });
     this.footerCopyright = page.getByText('© 2025 NEPTHIC. All rights reserved.');
+
+    // Toast messages section
+    this.loginSuccessToast  = page.getByRole('listitem').filter({ hasText: 'Login successful!' })
   }
 
   /**
@@ -135,6 +141,13 @@ export class HomePage extends BasePage {
    */
   async navigateToHomePage() {
     await this.goto(HOMEPAGE);
+  }
+
+   /**
+   * Go to profile page
+   */
+  async goToProfilePage(): Promise<void> {
+    await this.profileButton.click({force:true});
   }
 
   /**

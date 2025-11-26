@@ -3,6 +3,7 @@ import { Page } from '@playwright/test';
 import { SignUpPage } from '@pages/sign-up-page';
 import { SignInPage } from '@pages/sign-in-page';
 import { HomePage } from '@pages/home-page';
+import { ProfilePage } from '@pages/profile-page';
 
 export type TestFixtures = {
   /**
@@ -21,7 +22,15 @@ export type TestFixtures = {
   /*
    * Home Page Object
    */
+  /*
+   * Home Page Object
+   */
   homePage: HomePage;
+
+  /**
+   * Profile Page Object
+   */
+  profilePage: ProfilePage;
 };
 
 export const test = base.extend<TestFixtures>({
@@ -59,6 +68,11 @@ export const test = base.extend<TestFixtures>({
   homePage: async ({ page }, use) => {
     const homePage = new HomePage(page);
     await use(homePage);
+  },
+
+  profilePage: async ({ page }, use) => {
+    const profilePage = new ProfilePage(page);
+    await use(profilePage);
   },
 });
 
